@@ -1,0 +1,14 @@
+<h2><%= @project.title %></h2>
+<p><%= @project.description %></p>
+
+<%= link_to "Edit", edit_project_path(@project) %> |
+<%= link_to "Back to All Projects", projects_path %>
+
+<h3>Issues</h3>
+<%= link_to "Add Issue", new_project_issue_path(@project) %>
+
+<ul>
+  <% @issues.each do |issue| %>
+    <li><%= issue.title %> - <%= issue.status %> (Priority: <%= issue.priority %>)</li>
+  <% end %>
+</ul>
